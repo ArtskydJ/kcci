@@ -11,28 +11,36 @@ var dirname = require('path').dirname
 var textMetadataParser = require('text-metadata-parser')
 var mkdirp = require('mkdirp')
 
+require('./local-ftp-test-server.js')
+var ftpUser = 'joseph'
+var ftpPass = '123456'
+var ftpHost = '127.0.0.1'
+
+/*
 var fromPath = process.argv[2]
 var ftpHost = process.argv[3]
 var ftpRootPath = process.argv[4]
-
 if (!fromPath || !ftpHost || !ftpRootPath) {
 	console.error('Usage: node copy-deploy.js fromPath ftpHost ftpRootPath')
 	console.error('E.g.   node copy-deploy.js /usr/me/git/KayserCommentary ftp.kaysercommentary.com /files')
 	process.exit(1)
 }
 console.log('deploying from', fromPath, 'to', ftpHost + ftpRootPath)
-
-var ftp = new Ftp({
-	host: ftpHost
-})
 var ftpUser = process.env.FTP_USER || 'joseph'
 var ftpPass = process.env.FTP_PASS || '123456'
+*/
 
-ftp.auth(ftpUser, ftpPass, function (err) {
-	if (err) throw err
+setTimeout(function () {
+	var ftp = new Ftp({
+		host: ftpHost
+	})
 
-	copyAndDeploy(fromPath,  ftpRootPath)
-})
+	ftp.auth(ftpUser, ftpPass, function (err) {
+		if (err) throw err
+
+		copyAndDeploy(fromPath,  ftpRootPath)
+	})
+}, 2500)
 
 var bag = new Bagpipe(5)
 
