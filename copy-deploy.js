@@ -9,12 +9,14 @@ var joinPath = require('path').join
 var resolvePath = require('path').resolve
 var dirname = require('path').dirname
 var textMetadataParser = require('text-metadata-parser')
-var mkdirp = require('mkdirp')
+
+var fromPath = process.cwd()
 
 require('./local-ftp-test-server.js')
 var ftpUser = 'joseph'
 var ftpPass = '123456'
 var ftpHost = '127.0.0.1'
+var ftpRootPath = '/'
 
 /*
 var fromPath = process.argv[2]
@@ -30,8 +32,10 @@ var ftpUser = process.env.FTP_USER || 'joseph'
 var ftpPass = process.env.FTP_PASS || '123456'
 */
 
+var ftp = null
+
 setTimeout(function () {
-	var ftp = new Ftp({
+	ftp = new Ftp({
 		host: ftpHost
 	})
 
