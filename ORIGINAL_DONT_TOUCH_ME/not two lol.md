@@ -1,5 +1,0 @@
----
-name: awesome
----
-
-hooray
