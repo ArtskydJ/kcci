@@ -2,7 +2,8 @@ machine:
 	node:
 		version: 6
 dependencies:
-	- lftp
+	- post:
+		- sudo apt-get install lftp -y
 test:
 	override:
 		- node ./copy-over-wanted-files-to-temp-dir.js /tmp/kc
