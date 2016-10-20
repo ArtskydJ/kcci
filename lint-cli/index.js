@@ -1,12 +1,16 @@
 #!/usr/bin/env node
 
 const fs = require('fs')
-const minimist = require('minimist')
 const glob = require('glob')
 const validateFile = require('./validate-file.js')
 
-const argv = minimist(process.argv.slice(2))
-const noddityRoot = argv.noddityRoot
+const noddityRoot = process.argv[2]
+
+if (noddityRoot) {
+	console.log(`Linting ${noddityRoot}`)
+} else {
+	throw new Error('Usage: node lint-cli/index.js <noddityRoot>')
+}
 
 glob('**/*.mm?d', { cwd: noddityRoot }, (err, filePaths) => {
 	if (err) throw err
