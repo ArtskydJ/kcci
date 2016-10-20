@@ -1,13 +1,13 @@
 machine:
-	node:
-		version: 5.5.0 # latest in both ubuntus
+  node:
+    version: 5.5.0 # latest in both ubuntus
 database: # obviously not database, testing
-	- override:
-		- sudo apt-get install lftp -y
+  - override:
+    - sudo apt-get install lftp -y
 deployment:
-	production:
-		branch: master
-		owner: ArtskydJ # This should be KayserCommentaryOrg I think
-		commands:
-			- node ./copy-published-md-to-tmp.js ./md_web /tmp/kc
-			- ./deploy-to-ftp.sh /tmp/kc ftp://104.131.0.1
+  production:
+    branch: master
+    owner: ArtskydJ # This should be KayserCommentaryOrg I think
+    commands:
+      - node ./copy-published-md-to-tmp.js ./md_web /tmp/kc
+      - ./deploy-to-ftp.sh /tmp/kc ftp://104.131.0.1
