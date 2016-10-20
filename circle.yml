@@ -1,8 +1,8 @@
 machine:
 	node:
 		version: 5.5.0 # latest in both ubuntus
-dependencies:
-	- pre:
+database: # obviously not database, testing
+	- override:
 		- sudo apt-get install lftp -y
 deployment:
 	production:
