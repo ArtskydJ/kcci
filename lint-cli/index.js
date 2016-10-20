@@ -18,6 +18,6 @@ glob('**/*.mm?d', { cwd: noddityRoot }, (err, filePaths) => {
 				console.error(`${err.toString()} (${filePath})`)
 				process.exitCode = 1
 			}
-		}
+		})
 	})
 })
