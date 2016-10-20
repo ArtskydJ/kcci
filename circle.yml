@@ -2,7 +2,7 @@ machine:
 	node:
 		version: 5.5.0 # latest in both ubuntus
 dependencies:
-	- post:
+	- pre:
 		- sudo apt-get install lftp -y
 deployment:
 	production:
