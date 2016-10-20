@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require('fs')
 const minimist = require('minimist')
 const glob = require('glob')
@@ -9,7 +11,7 @@ const noddityRoot = argv.noddityRoot
 glob('**/*.mm?d', { cwd: noddityRoot }, (err, filePaths) => {
 	if (err) throw err
 
-	filePaths.forEach(filePath => {
+	filePaths.forEach(filePath => { // rate limit this?
 		fs.readFile(filePath, { encoding: 'utf8' }, (errFs, fileData) => {
 			const err = errFs || validateFileData(fileData)
 			if (err) {

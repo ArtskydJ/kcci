@@ -9,5 +9,5 @@ deployment:
 		branch: master
 		owner: ArtskydJ # This should be KayserCommentaryOrg I think
 		commands:
-			- node ./copy-over-wanted-files-to-temp-dir.js /tmp/kc
-			- ./deploy.sh /tmp/kc
+			- node ./copy-published-md-to-tmp.js ./md_web /tmp/kc
+			- ./deploy-to-ftp.sh /tmp/kc ftp://104.131.0.1
