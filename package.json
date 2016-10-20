@@ -1,0 +1,12 @@
+{
+  "name": "kcci",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "main": "lint-cli/index.js",
+  "scripts": {
+    "test": "node lint-cli/index.js --noddity-root md_web"
+  },
+  "author": "Joseph Dykstra",
+  "license": "MIT"
+}

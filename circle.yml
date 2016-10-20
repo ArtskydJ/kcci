@@ -4,12 +4,10 @@ machine:
 dependencies:
 	- post:
 		- sudo apt-get install lftp -y
-test:
-	override:
-		- node ./copy-over-wanted-files-to-temp-dir.js /tmp/kc
 deployment:
 	production:
 		branch: master
 		owner: ArtskydJ # This should be KayserCommentaryOrg I think
 		commands:
+			- node ./copy-over-wanted-files-to-temp-dir.js /tmp/kc
 			- ./deploy.sh /tmp/kc
