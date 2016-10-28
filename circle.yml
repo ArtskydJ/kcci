@@ -4,10 +4,11 @@ machine:
 dependencies:
   post:
     - sudo apt-get install lftp -y
+    - local-ftp.sh
 deployment:
   production:
     branch: master
     owner: ArtskydJ # This should be KayserCommentaryOrg I think
     commands:
       - node ./copy-published-md-to-tmp.js ./md_web /tmp/kc
-      - ./deploy-to-ftp.sh /tmp/kc ftp://104.131.0.1
+      - ./deploy-to-ftp.sh /tmp/kc ftp://127.0.0.1
