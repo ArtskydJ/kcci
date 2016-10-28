@@ -1,3 +1,5 @@
+#!/bin/sh
+
 apt-get install -y vsftpd
 
 echo "listen=YES" > /etc/vsftpd.conf
