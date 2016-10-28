@@ -4,7 +4,7 @@ machine:
 dependencies:
   post:
     - sudo apt-get install lftp -y
-    - local-ftp.sh
+    - sh local-ftp.sh
 deployment:
   production:
     branch: master
