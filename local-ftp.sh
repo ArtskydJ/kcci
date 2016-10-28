@@ -12,6 +12,7 @@ echo "anon_upload_enable=YES" >> /etc/vsftpd.conf
 echo "anon_mkdir_write_enable=YES" >> /etc/vsftpd.conf
 echo "anon_other_write_enable=YES" >> /etc/vsftpd.conf
 # I think you have to be logged in as a user for this to function correctly
+# https://groups.google.com/forum/#!topic/alt-f/kfvcx_OP9jI
 echo "allow_writeable_chroot=YES" >> /etc/vsftpd.conf
 echo "ls_recurse_enable=YES" >> /etc/vsftpd.conf
 
